@@ -1,1 +1,10 @@
-<p>detalle-personaje works!</p>
+<article class="card container">
+    <div class="card-body">
+        <h5 class="card-title">{{personajeRecibido.name}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{personajeRecibido.height}} cm</li>
+        <li class="list-group-item">{{personajeRecibido.gender}}</li>
+        <li class="list-group-item">{{personajeRecibido.created | date:'d/MM/yyyy'}}</li>
+    </ul>
+</article>

@@ -1,1 +1,10 @@
-<p>detalle-pelicula works!</p>
+<article class="card container">
+    <div class="card-body">
+        <h5 class="card-title">{{peliculaRecibida.title}}</h5>
+        <p class="card-text">{{peliculaRecibida.opening_crawl}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{peliculaRecibida.director}}</li>
+        <li class="list-group-item">{{peliculaRecibida.release_date | date:'d/MM/yyyy'}}</li>
+    </ul>
+</article>

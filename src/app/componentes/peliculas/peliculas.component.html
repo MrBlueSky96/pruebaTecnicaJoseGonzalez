@@ -2,7 +2,7 @@
     <div class="border border-info" *ngFor="let pelicula of listaPeliculas">
         <p>Título: {{pelicula.title}}</p>
         <p>Director: {{pelicula.director}}</p>
-        <p>Fecha de lanzamiento: {{pelicula.release_date}}</p>
+        <p>Fecha de lanzamiento: {{pelicula.release_date | date:'d/MM/yyyy'}}</p>
         <p>Personajes que aparecen: {{pelicula.characters.length}}</p>
         <p>Planetas que aparecen: {{pelicula.planets.length}}</p>
         <p>Especies que aparecen: {{pelicula.species.length}}</p>
