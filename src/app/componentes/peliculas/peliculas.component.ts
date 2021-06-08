@@ -25,8 +25,10 @@ export class PeliculasComponent implements OnInit {
     this.peliculaService.getPeliculas().subscribe(
       res => {
         console.log(res);
-        
         this.listaPeliculas = res.results;
+
+        this.pruebasMetodosArray(res.results);
+
       },
       error => console.error(error)
     )
@@ -40,5 +42,24 @@ export class PeliculasComponent implements OnInit {
     this.router.navigate(['/peliculas/',pelicula.url.substring(pelicula.url.length-2,pelicula.url.length-1)])
 
   }
+
+  pruebasMetodosArray(listaPeliculas: Array<Pelicula>) {
+    //filter
+    let peliculasGeorge: Array<Pelicula> = listaPeliculas.filter(e => e.director === "George Lucas");
+    console.log(peliculasGeorge);
+    
+    //find
+    let aNewHope = peliculasGeorge.find(e => e.title === "A New Hope");
+    console.log(aNewHope);
+
+    //map
+    let tituloAlReves = [].map.call(aNewHope?.title, function(x) {
+      return x;
+    }).reverse().join('');
+    console.log(tituloAlReves);
+        
+    
+  }
+
 
 }

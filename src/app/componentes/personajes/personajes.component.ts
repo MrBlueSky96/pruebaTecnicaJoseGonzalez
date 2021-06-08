@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Pelicula } from 'src/app/clases/pelicula';
 import { Personaje } from 'src/app/clases/personaje';
-import { PeliculasService } from 'src/app/servicios/peliculas.service';
 import { PersonajesService } from 'src/app/servicios/personajes.service';
 
 @Component({
@@ -18,12 +16,11 @@ export class PersonajesComponent implements OnInit {
 
   pagina: number = 1;
 
-  constructor(private personajeService: PersonajesService, private peliculaService: PeliculasService, private router: Router) { }
+  constructor(private personajeService: PersonajesService, private router: Router) { }
 
   ngOnInit(): void {
 
     this.getPersonajes(this.pagina);
-
 
   }
 
@@ -38,43 +35,10 @@ export class PersonajesComponent implements OnInit {
         if (res.next !== null) {
           this.pagina++;
           this.getPersonajes(this.pagina);
-        } else { //Ya no hay mas paginas de personajes
-
-          // this.listaPersonajes.forEach(personaje => {
-          //   personaje.films.forEach(pelicula => {
-              
-  
-          //     this.peliculaService.getPelicula(Number(pelicula.substring(pelicula.length-2,pelicula.length-1))).subscribe(
-          //       (p: Pelicula) => {
-
-          //         pelicula = p.title;
-          //         console.log(pelicula);
-                  
-          //       },
-          //       error => console.error(error)
-          //     )
-              
-          //   });
-          // });
-
         }
-
-        
 
       }
 
-    )
-
-  }
-
-
-  getPelicula(id: number) {
-
-    this.peliculaService.getPelicula(id).subscribe(
-      (p: Pelicula) => {
-        //this.pelicula = p;
-      },
-      error => console.error(error)
     )
 
   }
@@ -84,7 +48,7 @@ export class PersonajesComponent implements OnInit {
 
     this.personajeService.enviarDetalles(personaje);
 
-    this.router.navigate(['/personajes/',personaje.url.substring(personaje.url.length-2,personaje.url.length-1)])
+    this.router.navigate(['/personajes/', personaje.url.substring(personaje.url.length - 2, personaje.url.length - 1)])
 
   }
 
