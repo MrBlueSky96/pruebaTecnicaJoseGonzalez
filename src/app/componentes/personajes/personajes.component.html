@@ -1,1 +1,6 @@
-<p>personajes works!</p>
+<section *ngFor="let personaje of listaPersonajes">
+    <p>Nombre: {{personaje.name}}</p>
+    <p>Sexo: {{personaje.gender}}</p>
+    <p>Color de Pelo: {{personaje.hair_color}}</p>
+    <p>Películas en las que aparece: {{personaje.films}}</p>
+</section>

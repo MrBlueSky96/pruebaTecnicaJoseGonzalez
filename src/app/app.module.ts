@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PersonajesComponent } from './componentes/personajes/personajes.component';
 import { PeliculasComponent } from './componentes/peliculas/peliculas.component';
 import { PortadaComponent } from './componentes/portada/portada.component';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PortadaComponent } from './componentes/portada/portada.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
