@@ -7,13 +7,17 @@ import { PersonajesComponent } from './componentes/personajes/personajes.compone
 import { PeliculasComponent } from './componentes/peliculas/peliculas.component';
 import { PortadaComponent } from './componentes/portada/portada.component';
 import { HttpClientModule} from '@angular/common/http';
+import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle-pelicula.component';
+import { DetallePersonajeComponent } from './componentes/detalle-personaje/detalle-personaje.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonajesComponent,
     PeliculasComponent,
-    PortadaComponent
+    PortadaComponent,
+    DetallePeliculaComponent,
+    DetallePersonajeComponent
   ],
   imports: [
     BrowserModule,

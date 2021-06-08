@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Pelicula } from 'src/app/clases/pelicula';
 import { Personaje } from 'src/app/clases/personaje';
 import { PeliculasService } from 'src/app/servicios/peliculas.service';
@@ -17,7 +18,7 @@ export class PersonajesComponent implements OnInit {
 
   pagina: number = 1;
 
-  constructor(private personajeService: PersonajesService, private peliculaService: PeliculasService) { }
+  constructor(private personajeService: PersonajesService, private peliculaService: PeliculasService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -75,6 +76,15 @@ export class PersonajesComponent implements OnInit {
       },
       error => console.error(error)
     )
+
+  }
+
+
+  verDetalles(personaje: Personaje) {
+
+    this.personajeService.enviarDetalles(personaje);
+
+    this.router.navigate(['/personajes/',personaje.url.substring(personaje.url.length-2,personaje.url.length-1)])
 
   }
 
